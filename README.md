@@ -9,3 +9,5 @@ Then, edit `app/config/db.config.js` with correct DB credentials.
 ```
 node server.js
 ```
+
+Delete package.lock before npm i
