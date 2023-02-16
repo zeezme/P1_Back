@@ -86,4 +86,3 @@ const authJwt = {
   isModeratorOrAdmin: isModeratorOrAdmin,
 }
 module.exports = authJwt
-
