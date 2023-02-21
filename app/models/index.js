@@ -1,8 +1,9 @@
 const config = require("../config/db.config.js")
 
 const Sequelize = require("sequelize")
+
 const sequelize = new Sequelize(
-  "postgres://postgres:postgres@localhost:5432/p1store"
+  `postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_ADDRESS}:${process.env.DB_PORT}/${process.env.DB_NAME}`
 )
 
 const db = {}

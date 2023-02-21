@@ -1,11 +1,12 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const cors = require("cors")
+require("dotenv").config()
 
 const app = express()
-
+console.log(`http://${process.env.CLIENT_ADDRESS}:${process.env.CLIENT_PORT}`)
 var corsOptions = {
-  origin: "http://localhost:8081",
+  origin: `http://${process.env.CLIENT_ADDRESS}:${process.env.CLIENT_PORT}`,
 }
 
 app.use(cors(corsOptions))
@@ -31,7 +32,7 @@ db.sequelize.sync()
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." })
+  res.json({ message: "Running." })
 })
 
 // routes

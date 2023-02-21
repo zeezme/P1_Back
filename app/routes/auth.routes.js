@@ -7,7 +7,7 @@ module.exports = function (app) {
       "Access-Control-Allow-Headers",
       "x-access-token, Origin, Content-Type, Accept",
       "Access-Control-Allow-Origin",
-      "http://localhost:8081",
+      `http://${process.env.CLIENT_ADDRESS}:${process.env.CLIENT_PORT}`,
       "Access-Control-Allow-Credentials",
       true
     )
