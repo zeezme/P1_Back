@@ -14,9 +14,5 @@ module.exports = function (app) {
 
   app.post("/api/shopify/return", [authJwt.verifyToken], controller.postReturn)
 
-  app.get(
-    "/api/shopify/products",
-    [authJwt.verifyToken],
-    controller.getProducts
-  )
+  app.get("/api/shopify/products", controller.getProducts)
 }

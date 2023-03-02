@@ -13,15 +13,15 @@ exports.postReturn = (req, res) => {
     body: req.body,
   })
 }
-
+//replace url with shopify info
 exports.getProducts = (req, res) => {
   const options = {
-    method: "POST",
-    url: "https://testador2000.myshopify.com/admin/api/2023-01/graphql.json",
+    method: "GET",
+    url: "https://fakestoreapi.com/products/",
     headers: {
       "Content-Type": "application/json",
-      "X-Shopify-Access-Token": "----------------------------------",
-    },
+      /* "X-Shopify-Access-Token": "----------------------------------", */
+    } /* ,
     data: {
       query: `{
     products(first: 10) {
@@ -44,15 +44,13 @@ exports.getProducts = (req, res) => {
       }
     }
   }    `,
-    },
+    }, */,
   }
 
   axios
     .request(options)
 
     .then((response) => {
-      console.log(response.data)
-
       res.status(200).send(response.data)
     })
     .catch((error) => {
