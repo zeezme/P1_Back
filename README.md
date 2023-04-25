@@ -9,13 +9,13 @@ Edit `app/config/config.json` with correct DB credentials.
 Add `.env` file with correct DB credentials. (Temporary)
 
 ```json
-DB_ADDRESS = localhost
-DB_USER = postgres
-DB_PORT = 5432
-DB_NAME = p1store
-DB_PASSWORD = postgres
-CLIENT_ADDRESS = localhost
-CLIENT_PORT = 8081
+DB_ADDRESS =
+DB_USER = 
+DB_PORT =
+DB_NAME =
+DB_PASSWORD =
+CLIENT_ADDRESS =
+CLIENT_PORT =
 ```
 
 ### Run
