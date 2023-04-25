@@ -1,11 +1,15 @@
 {
   "name": "node-js-jwt-auth-postgresql",
   "version": "1.0.0",
-  "description": "Node.js Demo for JWT Authentication with PostgreSQL",
+  "description": "Node.js JWT Authentication with PostgreSQL",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "sequelize db:seed:all --config=app/config/config.json --seeders-path=app/seeders",
+    "dump": "sequelize db:migrate --config=app/config/config.json --migrations-path=app/migrations",
+    "create-migration": "npx sequelize-cli migration:generate --migrations-path=app/migrations --name",
+    "create-seeder": "sequelize seed:generate --seeders-path=app/seeders --name"
   },
   "keywords": [
     "node js",

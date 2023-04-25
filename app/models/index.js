@@ -1,5 +1,3 @@
-const config = require("../config/db.config.js")
-
 const Sequelize = require("sequelize")
 
 const sequelize = new Sequelize(
@@ -28,4 +26,3 @@ db.user.belongsToMany(db.role, {
 db.ROLES = ["user", "admin", "moderator"]
 
 module.exports = db
-
