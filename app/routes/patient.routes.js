@@ -15,4 +15,9 @@ module.exports = function (app) {
     [authJwt.verifyToken, authJwt.isModeratorOrAdmin],
     controller.get
   )
+  app.post(
+    "/api/patient/create",
+    [authJwt.verifyToken, authJwt.isModeratorOrAdmin],
+    controller.create
+  )
 }

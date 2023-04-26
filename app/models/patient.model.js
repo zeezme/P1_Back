@@ -2,15 +2,18 @@ module.exports = (sequelize, Sequelize) => {
   const Patient = sequelize.define("patients", {
     name: {
       type: Sequelize.STRING,
+      allowNull: false,
     },
     email: {
       type: Sequelize.STRING,
     },
     phone: {
       type: Sequelize.STRING,
+      allowNull: false,
     },
     cpf: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING,
+      allowNull: false,
     },
     registration_date: {
       type: Sequelize.DATE,
@@ -18,9 +21,11 @@ module.exports = (sequelize, Sequelize) => {
     },
     address: {
       type: Sequelize.STRING,
+      allowNull: false,
     },
     price: {
       type: Sequelize.DECIMAL(10, 2),
+      allowNull: false,
     },
   })
 
