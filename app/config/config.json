@@ -3,7 +3,7 @@
     "username": "postgres",
     "password": "postgres",
     "database": "p1store",
-    "host": "localhost",
+    "host": "projectp1.azurewebsites.net",
     "dialect": "postgres"
   }
 }
