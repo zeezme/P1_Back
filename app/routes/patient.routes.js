@@ -1,5 +1,6 @@
 const { authJwt } = require("../middleware")
 const controller = require("../controllers/patient.controller")
+const verifyRegex = require("../middleware/verifyRegex")
 
 module.exports = function (app) {
   app.use(function (req, res, next) {
@@ -10,14 +11,14 @@ module.exports = function (app) {
     next()
   })
 
-  app.get(
+  app.post(
     "/api/patient/get",
     [authJwt.verifyToken, authJwt.isModeratorOrAdmin],
     controller.get
   )
   app.post(
     "/api/patient/create",
-    [authJwt.verifyToken, authJwt.isModeratorOrAdmin],
+    [authJwt.verifyToken, authJwt.isModeratorOrAdmin, verifyRegex.all],
     controller.create
   )
 }

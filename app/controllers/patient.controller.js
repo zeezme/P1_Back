@@ -39,6 +39,7 @@ exports.create = (req, res) => {
         cpf: req.body.cpf,
         address: req.body.address,
         price: req.body.price,
+        parent_id: 1,
       })
         .then((patient) => {
           res
@@ -52,5 +53,11 @@ exports.create = (req, res) => {
   })
 }
 exports.get = (req, res) => {
-  res.status(200).send("Get test")
+  Patient.findAll({
+    where: {
+      parent_id: req.body.parent_id,
+    },
+  }).then((patient) => {
+    res.status(200).json(patient)
+  })
 }

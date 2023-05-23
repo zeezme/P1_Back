@@ -1,7 +1,7 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const cors = require("cors")
-const morgan = require("morgan")
+/* const morgan = require("morgan") */
 require("dotenv").config()
 
 const app = express()
@@ -13,7 +13,7 @@ var corsOptions = {
 
 app.use(cors(corsOptions))
 
-app.use(morgan("combined"))
+/* app.use(morgan("combined")) */
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
