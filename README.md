@@ -10,7 +10,7 @@ Add `.env` file with correct DB credentials. (Temporary)
 
 ```json
 DB_ADDRESS =
-DB_USER = 
+DB_USER =
 DB_PORT =
 DB_NAME =
 DB_PASSWORD =
@@ -21,7 +21,7 @@ CLIENT_PORT =
 ### Run
 
 ```
-npm run setup //Run the seeders
 npm run dump //Run the migrations
+npm run setup //Run the seeders
 npm run start //start the project
 ```
