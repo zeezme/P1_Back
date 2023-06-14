@@ -11,11 +11,7 @@ module.exports = function (app) {
     next()
   })
 
-  app.post(
-    "/api/patient/get",
-    [authJwt.verifyToken, authJwt.isModeratorOrAdmin],
-    controller.get
-  )
+  app.post("/api/patient/get", [authJwt.verifyToken], controller.get)
   app.post(
     "/api/patient/create",
     [authJwt.verifyToken, authJwt.isModeratorOrAdmin, verifyRegex.all],
