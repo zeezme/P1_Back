@@ -9,13 +9,14 @@ var jwt = require("jsonwebtoken")
 var bcrypt = require("bcryptjs")
 
 exports.signup = (req, res) => {
-  // Save User to Database
+  // Cria o usuário no banco
   User.create({
     username: req.body.username,
     email: req.body.email,
     password: bcrypt.hashSync(req.body.password, 8),
   })
     .then((user) => {
+      //Se tiver o role na requisição
       if (req.body.roles) {
         Role.findAll({
           where: {
@@ -47,7 +48,9 @@ exports.signin = (req, res) => {
     },
   })
     .then((user) => {
+      console.log("teste")
       if (!user) {
+        console.log("aaa")
         return res.status(404).send({ message: "User Not found." })
       }
 
